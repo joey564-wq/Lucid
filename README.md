@@ -91,7 +91,7 @@ open index.html
 
 ## Author
 
-**Joey Dolan** — [github.com/joey564-wq](https://github.com/joey564-wq) · [linkedin.com/in/josephmdolan](https://linkedin.com/in/josephmdolan)
+**Joey Dolan** — [github.com/joey564-wq](https://github.com/joey564-wq)
 
 ---
 
