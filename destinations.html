@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Destinations — Lucid</title>
+<meta name="description" content="Honest reviews of 22 sober and sober-curious travel destinations. Ratings, what to know, and direct booking links.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bone: #f0e9dc;
+    --cream: #e8dfc9;
+    --ink: #1a1410;
+    --ink-soft: #1a1410cc;
+    --ink-muted: #1a141099;
+    --rust: #a64a2a;
+    --rust-dark: #8a3d22;
+    --ocean: #1f3a3d;
+    --ochre: #c89544;
+    --line: #1a141022;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter Tight', -apple-system, sans-serif;
+    background: var(--bone);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .disclosure-bar {
+    background: var(--ink);
+    color: var(--bone);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    text-align: center;
+    padding: 8px 20px;
+    letter-spacing: 0.02em;
+  }
+  .disclosure-bar a { text-decoration: underline; opacity: 0.85; }
+
+  nav {
+    border-bottom: 1px solid var(--line);
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bone);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .nav-links a { transition: opacity 0.2s; }
+  .nav-links a:hover { opacity: 0.6; }
+  .nav-links a.active { border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
+  .nav-cta {
+    background: var(--rust);
+    color: var(--bone) !important;
+    padding: 10px 18px;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--rust-dark); opacity: 1 !important; }
+
+  .page-header { padding: 80px 32px 48px; max-width: 1280px; margin: 0 auto; }
+  .breadcrumb {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 20px;
+  }
+  .breadcrumb a:hover { color: var(--rust); }
+  .page-header h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+    max-width: 14ch;
+  }
+  .page-header h1 em { font-style: italic; color: var(--rust); }
+  .page-header p {
+    max-width: 56ch;
+    font-size: 18px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* Filter bar */
+  .filter-bar {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 20px 32px;
+    background: var(--bone);
+    position: sticky;
+    top: 65px;
+    z-index: 90;
+  }
+  .filter-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .filter-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-right: 8px;
+  }
+  .filter-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.18s;
+  }
+  .filter-btn:hover { border-color: var(--ink); }
+  .filter-btn.active {
+    background: var(--ink);
+    color: var(--bone);
+    border-color: var(--ink);
+  }
+  .result-count {
+    margin-left: auto;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  .reviews-section { padding: 48px 32px 80px; max-width: 1280px; margin: 0 auto; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+  }
+
+  .review-card {
+    background: var(--cream);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid transparent;
+    scroll-margin-top: 140px;
+  }
+  .review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px -20px rgba(26, 20, 16, 0.25);
+    border-color: var(--line);
+  }
+  .review-img { aspect-ratio: 16/10; overflow: hidden; position: relative; }
+  .review-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+  .review-card:hover .review-img img { transform: scale(1.04); }
+  .review-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: var(--bone);
+    padding: 6px 10px;
+    border-radius: 2px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .review-rating {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--ink);
+    color: var(--bone);
+    padding: 6px 10px;
+    border-radius: 2px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .review-rating::before {
+    content: "★";
+    color: var(--ochre);
+  }
+
+  .review-body {
+    padding: 22px 22px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .review-loc {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 8px;
+  }
+  .review-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+  }
+  .review-quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+    padding-left: 14px;
+    border-left: 2px solid var(--rust);
+  }
+  .review-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .meta-item { }
+  .meta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 4px;
+  }
+  .meta-value {
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .review-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+    flex: 1;
+  }
+  .bullet {
+    font-size: 13px;
+    color: var(--ink-soft);
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .bullet::before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    color: var(--rust);
+    font-weight: 600;
+  }
+  .bullet.con::before {
+    content: "−";
+    color: var(--ink-muted);
+  }
+  .review-ctas {
+    display: flex;
+    gap: 8px;
+  }
+  .review-cta-primary {
+    flex: 1;
+    background: var(--rust);
+    color: var(--bone);
+    padding: 11px 14px;
+    text-align: center;
+    border-radius: 2px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .review-cta-primary::after { content: "→"; transition: transform 0.2s; }
+  .review-cta-primary:hover { background: var(--rust-dark); }
+  .review-cta-primary:hover::after { transform: translateX(3px); }
+
+  .no-results {
+    display: none;
+    text-align: center;
+    padding: 80px 20px;
+    grid-column: 1 / -1;
+  }
+  .no-results.show { display: block; }
+  .no-results h3 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .no-results p { color: var(--ink-muted); font-size: 14px; }
+
+  /* Bottom CTA */
+  .bottom-cta {
+    background: var(--ocean);
+    color: var(--bone);
+    padding: 80px 32px;
+    text-align: center;
+  }
+  .bottom-cta h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+    max-width: 18ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bottom-cta h2 em { font-style: italic; color: var(--ochre); }
+  .bottom-cta p {
+    max-width: 50ch;
+    margin: 0 auto 32px;
+    opacity: 0.85;
+    font-size: 17px;
+  }
+  .bottom-cta-btn {
+    display: inline-block;
+    background: var(--rust);
+    color: var(--bone);
+    padding: 16px 32px;
+    border-radius: 2px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+  }
+  .bottom-cta-btn:hover { background: var(--rust-dark); }
+
+  footer {
+    background: var(--ink);
+    color: var(--bone);
+    padding: 56px 32px 32px;
+  }
+  .footer-inner { max-width: 1280px; margin: 0 auto; }
+  .footer-disclosure {
+    background: rgba(240, 233, 220, 0.06);
+    border-left: 2px solid var(--ochre);
+    padding: 18px 22px;
+    margin-bottom: 40px;
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: 0.85;
+    border-radius: 2px;
+  }
+  .footer-disclosure strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+    color: var(--ochre);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(240, 233, 220, 0.12);
+  }
+  .footer-logo {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .footer-tagline { font-size: 14px; opacity: 0.7; max-width: 36ch; }
+  .footer-col h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    opacity: 0.6;
+  }
+  .footer-col a {
+    display: block;
+    font-size: 14px;
+    padding: 4px 0;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+  .footer-col a:hover { opacity: 1; color: var(--ochre); }
+  .footer-bottom {
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .nav-links { gap: 18px; font-size: 11px; }
+    .page-header { padding: 48px 20px 32px; }
+    .filter-bar { padding: 16px 20px; }
+    .reviews-section { padding: 32px 20px 56px; }
+    .grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; }
+    .result-count { width: 100%; margin-left: 0; margin-top: 8px; }
+  }
+
+  /* ============================================
+     MOTION LAYER — added 2026
+     ============================================ */
+
+/* Scroll progress bar */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    z-index: 200;
+    pointer-events: none;
+    background: transparent;
+  }
+  .scroll-progress > span {
+    display: block;
+    height: 100%;
+    background: var(--rust);
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    transition: transform 0.12s linear;
+  }
+
+  /* Page curtain — slides over the page on internal navigation */
+  .page-curtain {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: var(--ink);
+    transform: translateY(100%);
+    pointer-events: none;
+    will-change: transform;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .page-curtain .mark {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(72px, 14vw, 200px);
+    color: var(--bone);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .page-curtain.leaving {
+    pointer-events: all;
+    animation: curtain-up 0.7s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  }
+  .page-curtain.leaving .mark {
+    animation: mark-show 0.7s cubic-bezier(0.76, 0, 0.24, 1) 0.05s forwards;
+  }
+  .page-curtain.entering {
+    transform: translateY(0);
+    animation: curtain-down 0.75s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  }
+  .page-curtain.entering .mark {
+    animation: mark-fade 0.75s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  }
+  @keyframes curtain-up {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+  }
+  @keyframes curtain-down {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+  }
+  @keyframes mark-show {
+    0% { opacity: 0; transform: translateY(24px); }
+    50% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes mark-fade {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-24px); }
+  }
+
+  /* Sticky nav scroll behavior */
+  nav {
+    transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease, border-color 0.3s ease;
+  }
+  nav.scrolled {
+    background: rgba(240, 233, 220, 0.78);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    backdrop-filter: saturate(140%) blur(14px);
+    box-shadow: 0 1px 0 0 rgba(26, 20, 16, 0.06), 0 18px 30px -24px rgba(26, 20, 16, 0.18);
+    border-bottom-color: transparent;
+  }
+
+  /* Reveal-on-scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.95s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.95s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Image clip-reveal — pulls a cream curtain off the image */
+  .clip-reveal {
+    position: relative;
+    overflow: hidden;
+  }
+  .clip-reveal::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--cream);
+    transform-origin: center bottom;
+    transform: scaleY(1);
+    transition: transform 1.05s cubic-bezier(0.76, 0, 0.24, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    z-index: 3;
+    pointer-events: none;
+  }
+  .clip-reveal.in::after {
+    transform: scaleY(0);
+  }
+  .clip-reveal img {
+    transform: scale(1.12);
+    transition: transform 1.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .clip-reveal.in img {
+    transform: scale(1);
+  }
+
+  /* Hero word-stagger reveal */
+  .word-line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.08em;
+    line-height: inherit;
+  }
+  .word-line > span {
+    display: inline-block;
+    transform: translateY(110%);
+    transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
+    transition-delay: var(--word-delay, 0ms);
+    will-change: transform;
+  }
+  .loaded .word-line > span {
+    transform: translateY(0);
+  }
+
+  /* Eyebrow + lede + ctas slide-fade after words */
+  .hero-eyebrow,
+  .hero-lede,
+  .hero-ctas {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .loaded .hero-eyebrow { opacity: 1; transform: none; transition-delay: 0.05s; }
+  .loaded .hero-lede { opacity: 0.85; transform: none; transition-delay: 0.85s; }
+  .loaded .hero-ctas { opacity: 1; transform: none; transition-delay: 1s; }
+  .loaded .hero-lede { color: var(--ink-soft); opacity: 1; }
+
+  /* Card hover refinements (subtle lift + image scale) */
+  .feat-card,
+  .review-card,
+  .partner-card {
+    transition:
+      transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+      box-shadow 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+      border-color 0.45s ease !important;
+    will-change: transform;
+  }
+  .feat-card:hover,
+  .review-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 26px 50px -28px rgba(26, 20, 16, 0.32);
+  }
+  .partner-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 50px -28px rgba(26, 20, 16, 0.28);
+  }
+  .feat-img img,
+  .review-img img {
+    transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) !important;
+  }
+  .feat-card:hover .feat-img img,
+  .review-card:hover .review-img img {
+    transform: scale(1.06);
+  }
+
+  /* Magnetic CTA — fill rises from bottom on hover */
+  .btn-primary,
+  .btn-secondary,
+  .feat-cta,
+  .review-cta-primary,
+  .partner-cta,
+  .big-cta-btn,
+  .nav-cta,
+  .final-cta-btn,
+  .bottom-cta-btn,
+  .section-head-link {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .btn-primary::before,
+  .feat-cta::before,
+  .review-cta-primary::before,
+  .partner-cta::before,
+  .big-cta-btn::before,
+  .nav-cta::before,
+  .final-cta-btn::before,
+  .bottom-cta-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--rust-dark);
+    transform: translateY(101%);
+    transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+    z-index: -1;
+  }
+  .btn-primary:hover::before,
+  .feat-cta:hover::before,
+  .review-cta-primary:hover::before,
+  .partner-cta:hover::before,
+  .big-cta-btn:hover::before,
+  .nav-cta:hover::before,
+  .final-cta-btn:hover::before,
+  .bottom-cta-btn:hover::before {
+    transform: translateY(0);
+  }
+  /* Featured partner card has ochre CTA, override fill color */
+  .partner-card.featured .partner-cta::before {
+    background: #b8862e;
+  }
+  .btn-secondary::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--ink);
+    transform: translateY(101%);
+    transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+    z-index: -1;
+  }
+  .btn-secondary:hover::before { transform: translateY(0); }
+
+  /* Section head link underline grows */
+  .section-head-link {
+    border-bottom: none !important;
+    padding-bottom: 4px;
+  }
+  .section-head-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--ink);
+    transform-origin: right;
+    transform: scaleX(1);
+    transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1), background 0.3s;
+  }
+  .section-head-link:hover::after {
+    transform-origin: left;
+    background: var(--rust);
+  }
+
+  /* Filter button micro-anim */
+  .filter-btn,
+  .jump-btn {
+    transition: all 0.25s cubic-bezier(0.2, 0.7, 0.2, 1) !important;
+  }
+  .filter-btn:hover,
+  .jump-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Marquee — partners on index */
+  .marquee {
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+    padding: 8px 0;
+  }
+  .marquee-track {
+    display: flex;
+    gap: 64px;
+    width: max-content;
+    animation: marquee 38s linear infinite;
+    align-items: center;
+  }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-track span {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: clamp(24px, 3vw, 34px);
+    color: var(--ink);
+    opacity: 0.5;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+  }
+  .marquee-track span:hover { opacity: 1; color: var(--rust); }
+  .marquee-track .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--rust);
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* Filter rearrange transition for destination cards */
+  .review-card {
+    transition:
+      transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1),
+      box-shadow 0.5s cubic-bezier(0.2, 0.7, 0.2, 1),
+      opacity 0.4s ease,
+      border-color 0.45s ease !important;
+  }
+  .review-card.filter-out {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+    pointer-events: none;
+  }
+  .review-card.filter-in {
+    animation: cardIn 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  }
+  @keyframes cardIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Stats numbers */
+  .stat-num em { display: inline-block; font-variant-numeric: tabular-nums; }
+
+  /* Body lock during page transition */
+  body.transitioning { overflow: hidden; }
+
+  /* Reduced motion — disable all the showy stuff, leave only essential transitions */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal, .clip-reveal::after, .word-line > span,
+    .hero-eyebrow, .hero-lede, .hero-ctas {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .clip-reveal img { transform: none !important; }
+    .marquee-track { animation: none !important; }
+    body::before { display: none; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+<div class="page-curtain" aria-hidden="true"><span class="mark">Lucid</span></div>
+
+<div class="disclosure-bar">
+  Some links on Lucid are affiliate links — we may earn a commission, at no extra cost to you. <a href="#disclosure">Learn more</a>
+</div>
+
+<nav>
+  <a href="index.html" class="logo">Lucid</a>
+  <div class="nav-links">
+    <a href="destinations.html" class="active">Destinations</a>
+    <a href="book.html" class="nav-cta">Book Now</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="breadcrumb"><a href="index.html">Lucid</a> / Destinations</div>
+  <h1 aria-label="Honest reviews. No filler.">
+    <span class="word-line"><span style="--word-delay: 0.05s">Honest&nbsp;</span><span style="--word-delay: 0.18s">reviews.</span></span>
+    <span class="word-line"><span style="--word-delay: 0.32s"><em>No&nbsp;filler.</em></span></span>
+  </h1>
+  <p class="reveal" style="--reveal-delay: 0.5s">22 sober-friendly destinations rated and reviewed. What's worth the money, what to skip, and where to book — all in one place.</p>
+</header>
+
+<div class="filter-bar">
+  <div class="filter-inner">
+    <span class="filter-label">Filter</span>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="wellness">Wellness</button>
+    <button class="filter-btn" data-filter="resort">Resorts</button>
+    <button class="filter-btn" data-filter="cruise">Cruises</button>
+    <button class="filter-btn" data-filter="adventure">Adventure</button>
+    <button class="filter-btn" data-filter="beach">Beach</button>
+    <button class="filter-btn" data-filter="retreat">Retreats</button>
+    <span class="result-count" id="resultCount">22 reviews</span>
+  </div>
+</div>
+
+<section class="reviews-section">
+  <div class="grid" id="grid">
+
+    <!-- 1. Sedona -->
+    <article class="review-card reveal" data-category="wellness" id="sedona">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Wellness</span>
+        <span class="review-rating">4.7</span>
+        <img src="https://images.unsplash.com/photo-1602491453631-e2a5ad90a131?w=800&q=80" alt="Sedona red rocks" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Sedona, Arizona</div>
+        <h3 class="review-title">Red Rock Recalibration</h3>
+        <p class="review-quote">A wellness town where mocktail menus take themselves seriously and 6am hikes are the social calendar.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Solo &amp; couples</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Vortex hikes &amp; mineral springs</div>
+          <div class="bullet">Strong mocktail scene town-wide</div>
+          <div class="bullet con">Tourist crowds in shoulder season</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Book hotels</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2. BodyHoliday -->
+    <article class="review-card reveal" data-category="resort wellness" id="bodyholiday">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Resort</span>
+        <span class="review-rating">4.9</span>
+        <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80" alt="BodyHoliday St. Lucia" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Cap Estate, St. Lucia</div>
+        <h3 class="review-title">BodyHoliday</h3>
+        <p class="review-quote">The wellness all-inclusive that pioneered the format in 1988. Daily spa treatment included, every day, every guest.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">All-inclusive</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Daily 50-min spa treatment included</div>
+          <div class="bullet">Yoga, watersports, fitness, all built-in</div>
+          <div class="bullet con">Bar exists; not alcohol-free</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Book stay</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3. SVI -->
+    <article class="review-card reveal" data-category="cruise" id="svi">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Cruise</span>
+        <span class="review-rating">4.6</span>
+        <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=800&q=80" alt="Cruise ship at sea" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Caribbean &amp; Mediterranean</div>
+        <h3 class="review-title">Sober Vacations Intl.</h3>
+        <p class="review-quote">38 years of fully alcohol-free group cruises. The bar pours seltzer; the community shows up on day one.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Sober community</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Fully dry ship; meetings onboard</div>
+          <div class="bullet">Two formats: Vacations or Villages</div>
+          <div class="bullet con">Group travel isn't for everyone</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">View sailings</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4. Bali -->
+    <article class="review-card reveal" data-category="wellness retreat" id="bali">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Retreat</span>
+        <span class="review-rating">4.5</span>
+        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80" alt="Bali rice terraces" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Ubud, Bali</div>
+        <h3 class="review-title">Ubud's Yoga Belt</h3>
+        <p class="review-quote">Sober-friendly long before the trend. Green juice carries more social currency here than a Bintang.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Long stays</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Daily yoga, raw kitchens, jungle walks</div>
+          <div class="bullet">Easy long-term affordability</div>
+          <div class="bullet con">Rainy season cuts hiking days</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Find stays</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5. Tulum -->
+    <article class="review-card reveal" data-category="beach wellness" id="tulum">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Beach</span>
+        <span class="review-rating">4.3</span>
+        <img src="https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?w=800&q=80" alt="Tulum beach" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Tulum, Mexico</div>
+        <h3 class="review-title">Cenotes &amp; Cacao Ceremonies</h3>
+        <p class="review-quote">Skip the party hostels and the original Tulum shows up — sound baths at dawn, cenotes by noon.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Wellness + beach</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Cenotes, sound baths, breathwork</div>
+          <div class="bullet">Strong plant-based food scene</div>
+          <div class="bullet con">Beach-zone party scene to avoid</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Book hotels</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6. Iceland -->
+    <article class="review-card reveal" data-category="adventure" id="iceland">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Adventure</span>
+        <span class="review-rating">4.8</span>
+        <img src="https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=800&q=80" alt="Iceland waterfall" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Reykjavík &amp; Ring Road</div>
+        <h3 class="review-title">Iceland</h3>
+        <p class="review-quote">Alcohol is taxed into irrelevance, the country runs on coffee and cold plunges, and the days handle themselves.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Road trips</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Geothermal pools country-wide</div>
+          <div class="bullet">Northern lights Sept–Apr</div>
+          <div class="bullet con">Expensive; food costs add up fast</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Plan trip</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 7. Viceroy Arenal -->
+    <article class="review-card reveal" data-category="resort adventure" id="viceroy-arenal">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Resort</span>
+        <span class="review-rating">4.6</span>
+        <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=800&q=80" alt="Arenal volcano" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">La Fortuna, Costa Rica</div>
+        <h3 class="review-title">Viceroy Arenal</h3>
+        <p class="review-quote">Hot springs, volcano views, and a property that leans hard into the natural setting. Days fill themselves.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Couples</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">On-site thermal pools</div>
+          <div class="bullet">Waterfall &amp; volcano hikes nearby</div>
+          <div class="bullet con">Remote — shuttle from SJO required</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Book stay</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 8. Lisbon -->
+    <article class="review-card reveal" data-category="adventure" id="lisbon">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">City</span>
+        <span class="review-rating">4.4</span>
+        <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80" alt="Lisbon rooftops" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Lisbon, Portugal</div>
+        <h3 class="review-title">Lisbon</h3>
+        <p class="review-quote">Café culture over bar culture. Long mornings, walkable hills, and a specialty coffee scene that earns the trip.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Solo travel</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Walkable, affordable, easy</div>
+          <div class="bullet">Strong coffee &amp; pastry culture</div>
+          <div class="bullet con">Bairro Alto nightlife is loud</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Find hotels</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 9. Greece -->
+    <article class="review-card reveal" data-category="beach" id="greece">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Beach</span>
+        <span class="review-rating">4.5</span>
+        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&q=80" alt="Greek islands" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Cyclades, Greece</div>
+        <h3 class="review-title">Greek Island Hopping</h3>
+        <p class="review-quote">Skip Mykonos. The smaller islands — Folegandros, Sifnos, Naxos — turn the rhythm into swim, eat, walk, sleep.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Slow travel</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Quiet islands feel timeless</div>
+          <div class="bullet">Ferries make hopping easy</div>
+          <div class="bullet con">High season pricing on big islands</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Find ferries</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10. Kamalaya -->
+    <article class="review-card reveal" data-category="retreat wellness" id="kamalaya">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Retreat</span>
+        <span class="review-rating">4.8</span>
+        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80" alt="Kamalaya wellness retreat" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Koh Samui, Thailand</div>
+        <h3 class="review-title">Kamalaya</h3>
+        <p class="review-quote">Holistic sanctuary with structured programs — sleep, stress, detox. Built for people who came to reset.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Resets</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Multi-day structured programs</div>
+          <div class="bullet">Strong holistic medicine team</div>
+          <div class="bullet con">Premium pricing; not a budget option</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Book program</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 11. Mii Amo -->
+    <article class="review-card reveal" data-category="retreat wellness" id="mii-amo">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Retreat</span>
+        <span class="review-rating">4.9</span>
+        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80" alt="Mii Amo destination spa" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Sedona, Arizona</div>
+        <h3 class="review-title">Mii Amo</h3>
+        <p class="review-quote">Three, four, or seven-night Journeys at one of the country's most respected destination spas. Wellness as a structured stay.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Solo retreats</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Curated multi-night Journeys</div>
+          <div class="bullet">All-inclusive food &amp; treatments</div>
+          <div class="bullet con">Books up months in advance</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Book Journey</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 12. Patagonia -->
+    <article class="review-card reveal" data-category="adventure" id="patagonia">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Adventure</span>
+        <span class="review-rating">4.7</span>
+        <img src="https://images.unsplash.com/photo-1671572126647-d9c9526b353e?w=800&q=80" alt="Trekkers hiking through Torres del Paine, Patagonia" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Torres del Paine, Chile</div>
+        <h3 class="review-title">Patagonia Trekking</h3>
+        <p class="review-quote">Multi-day W or O circuit treks. The days are long, the air is thin, and the lodges are for sleeping.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Type-2 fun</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Refugio system makes it accessible</div>
+          <div class="bullet">Adventure that requires clarity</div>
+          <div class="bullet con">Weather can turn fast</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Book trek tour</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 13. Kyoto -->
+    <article class="review-card reveal" data-category="adventure" id="kyoto">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">City</span>
+        <span class="review-rating">4.8</span>
+        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80" alt="Kyoto temple" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Kyoto, Japan</div>
+        <h3 class="review-title">Kyoto</h3>
+        <p class="review-quote">Tea ceremony as the headline. Temples, gardens, and a culture so refined it makes drinking feel beside the point.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Mindful pace</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Tea, temples, walking-paced city</div>
+          <div class="bullet">Ryokan stays feel like a retreat</div>
+          <div class="bullet con">Cherry blossom season is mobbed</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Find ryokans</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 14. Hooked -->
+    <article class="review-card reveal" data-category="cruise retreat" id="hooked">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Group Trip</span>
+        <span class="review-rating">4.5</span>
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80" alt="Group travelers" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Various — global</div>
+        <h3 class="review-title">HOOKED on Travel</h3>
+        <p class="review-quote">Smaller, more curated than a cruise. Built for sober travelers who want shared experiences without cruise-ship scale.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Small groups</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Curated sober group itineraries</div>
+          <div class="bullet">Costa Rica, Mexico, more</div>
+          <div class="bullet con">Limited departure dates</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">View trips</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 15. Big Sur -->
+    <article class="review-card reveal" data-category="adventure beach" id="big-sur">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Adventure</span>
+        <span class="review-rating">4.6</span>
+        <img src="https://images.unsplash.com/photo-1537063251968-305b92c8afc5?w=800&q=80" alt="Bixby Creek Bridge on the Big Sur coast" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Big Sur, California</div>
+        <h3 class="review-title">Big Sur</h3>
+        <p class="review-quote">Coastal cliffs, redwood hikes, and Esalen-adjacent retreat culture. Cell service is bad on purpose.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Off-grid resets</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Drivable from most of West Coast</div>
+          <div class="bullet">Genuinely unplugged feeling</div>
+          <div class="bullet con">Hwy 1 closures common</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Find lodges</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 16. Capsule -->
+    <article class="review-card reveal" data-category="adventure retreat" id="capsule">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Group Trip</span>
+        <span class="review-rating">4.7</span>
+        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80" alt="Hikers on mountain trail" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Various — Iceland, Patagonia, more</div>
+        <h3 class="review-title">Capsule Adventures</h3>
+        <p class="review-quote">Sober adventure tour operator. Active group trips built around movement, not the bar at day's end.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Active travel</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Sober-only group trips</div>
+          <div class="bullet">Multi-country itineraries</div>
+          <div class="bullet con">Physical fitness expected</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">View itineraries</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 17. Maui -->
+    <article class="review-card reveal" data-category="beach wellness" id="maui">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Beach</span>
+        <span class="review-rating">4.4</span>
+        <img src="https://images.unsplash.com/photo-1542259009477-d625272157b7?w=800&q=80" alt="Maui beach" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Maui, Hawai'i</div>
+        <h3 class="review-title">Maui</h3>
+        <p class="review-quote">Sunrise at Haleakalā, Road to Hāna, surf lessons. The early-morning rhythm of the island favors clear heads.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Active beach</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">North shore = quieter alternative</div>
+          <div class="bullet">Surf lessons widely available</div>
+          <div class="bullet con">Resort row in Wailea is generic</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Find stays</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 18. Marrakech -->
+    <article class="review-card reveal" data-category="adventure wellness" id="marrakech">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">City</span>
+        <span class="review-rating">4.5</span>
+        <img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=800&q=80" alt="Marrakech medina" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Marrakech, Morocco</div>
+        <h3 class="review-title">Marrakech &amp; the Atlas</h3>
+        <p class="review-quote">Mostly dry by culture — mint tea is the social ritual, not wine. A city where sober is the default state.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Cultural immersion</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Riads, hammams, mint tea everywhere</div>
+          <div class="bullet">Atlas trekking 1hr from city</div>
+          <div class="bullet con">Medina overwhelming first-timers</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Book riads</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 19. Sober Celebrations -->
+    <article class="review-card reveal" data-category="cruise" id="sober-celebrations">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Cruise</span>
+        <span class="review-rating">4.4</span>
+        <img src="https://images.unsplash.com/photo-1599640842225-85d111c60e6b?w=800&q=80" alt="Cruise ship calm sea" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Caribbean &amp; Alaska</div>
+        <h3 class="review-title">Sober Celebrations</h3>
+        <p class="review-quote">Group cruises and resort takeovers built on sober community. Smaller scale than SVI — easier to know everyone by night two.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Smaller groups</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Smaller, tighter group scale</div>
+          <div class="bullet">Resort takeovers as well as cruises</div>
+          <div class="bullet con">Fewer departures per year</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">View sailings</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 20. Banff -->
+    <article class="review-card reveal" data-category="adventure" id="banff">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Adventure</span>
+        <span class="review-rating">4.7</span>
+        <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=800&q=80" alt="Banff lake" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Banff, Alberta</div>
+        <h3 class="review-title">Banff &amp; Lake Louise</h3>
+        <p class="review-quote">Mountain town built for getting outside. Alpine lakes and 6am sunrises are the social calendar.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Mountain time</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Hot springs in town</div>
+          <div class="bullet">Day-hikes for every skill level</div>
+          <div class="bullet con">Lake Louise parking is a battle</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Find lodges</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 21. Tuscany -->
+    <article class="review-card reveal" data-category="retreat wellness" id="tuscany">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Retreat</span>
+        <span class="review-rating">4.3</span>
+        <img src="https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?w=800&q=80" alt="Tuscan countryside at sunset, San Quirico d'Orcia" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">Tuscany, Italy</div>
+        <h3 class="review-title">Tuscan Cooking Retreats</h3>
+        <p class="review-quote">Yes, it's wine country — but cooking schools and agriturismi run dry-friendly retreats focused on food and slow afternoons.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Couples</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Hands-on cooking school days</div>
+          <div class="bullet">Agriturismo stays feel grounded</div>
+          <div class="bullet con">Wine is everywhere — be intentional</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Find retreats</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 22. New Zealand -->
+    <article class="review-card reveal" data-category="adventure" id="new-zealand">
+      <div class="review-img clip-reveal">
+        <span class="review-tag">Adventure</span>
+        <span class="review-rating">4.8</span>
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80" alt="New Zealand mountains" loading="lazy">
+      </div>
+      <div class="review-body">
+        <div class="review-loc">South Island, New Zealand</div>
+        <h3 class="review-title">South Island Road Trip</h3>
+        <p class="review-quote">Queenstown to Milford Sound, Wanaka to the West Coast. Active days, early starts, and views that reward clarity.</p>
+        <div class="review-meta">
+          <div class="meta-item"><div class="meta-label">Best for</div><div class="meta-value">Road trip</div></div>
+          <div class="meta-item"><div class="meta-label">Budget</div><div class="meta-value">$$$$</div></div>
+        </div>
+        <div class="review-bullets">
+          <div class="bullet">Adventure sports on demand</div>
+          <div class="bullet">Fjords, glaciers, wine country</div>
+          <div class="bullet con">Long flights from US/EU</div>
+        </div>
+        <div class="review-ctas">
+          <a href="book.html" class="review-cta-primary">Plan the trip</a>
+        </div>
+      </div>
+    </article>
+
+    <div class="no-results" id="noResults">
+      <h3>Nothing in this category yet.</h3>
+      <p>We're adding new reviews every month — try a different filter.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="bottom-cta">
+  <h2 class="reveal">Ready to <em>book</em> something?</h2>
+  <p class="reveal" style="--reveal-delay: 100ms">Every Lucid review links straight to vetted booking partners. Same prices you'd pay anywhere else.</p>
+  <a href="book.html" class="bottom-cta-btn reveal" style="--reveal-delay: 200ms">Open the booking hub</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-disclosure" id="disclosure">
+      <strong>Affiliate disclosure</strong>
+      Lucid uses affiliate links. When you book through certain links on this site — including hotels, cruises, tours, and travel insurance — we may earn a commission at no extra cost to you. We only recommend destinations and operators we'd send a friend to. Editorial independence isn't for sale; commissions don't influence which destinations we feature or how we describe them.
+    </div>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">Lucid</div>
+        <p class="footer-tagline">Travel for sober and sober-curious people. Editorial line: experiences and destinations, not recovery-coded language.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="destinations.html">Destinations</a>
+        <a href="book.html">Book</a>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="#disclosure">Affiliate disclosure</a>
+        <a href="#">Editorial standards</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Lucid</span>
+      <span>Made in Chico, CA</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.review-card');
+  const resultCount = document.getElementById('resultCount');
+  const noResults = document.getElementById('noResults');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let lastCount = parseInt(resultCount.textContent) || cards.length;
+
+  function animateCount(from, to){
+    if (reduced) {
+      resultCount.textContent = to + (to === 1 ? ' review' : ' reviews');
+      return;
+    }
+    const dur = 360;
+    const start = performance.now();
+    function frame(now){
+      const t = Math.min(1, (now - start) / dur);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const v = Math.round(from + (to - from) * eased);
+      resultCount.textContent = v + (v === 1 ? ' review' : ' reviews');
+      if (t < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+
+      // Two-phase: fade-out non-matching, then fade-in matching with stagger
+      let visible = 0;
+      const matching = [];
+      cards.forEach(card => {
+        const categories = card.dataset.category || '';
+        const show = filter === 'all' || categories.split(' ').includes(filter);
+        if (show) {
+          matching.push(card);
+          visible++;
+        }
+      });
+
+      // Phase 1: hide non-matching
+      cards.forEach(card => {
+        const categories = card.dataset.category || '';
+        const show = filter === 'all' || categories.split(' ').includes(filter);
+        if (!show) {
+          card.classList.add('filter-out');
+          card.classList.remove('filter-in');
+        }
+      });
+
+      // Phase 2: after a beat, swap display + fade in matching with mini-stagger
+      const delay = reduced ? 0 : 220;
+      setTimeout(() => {
+        cards.forEach(card => {
+          const categories = card.dataset.category || '';
+          const show = filter === 'all' || categories.split(' ').includes(filter);
+          if (show) {
+            card.style.display = '';
+            card.classList.remove('filter-out');
+            // re-trigger fade-in
+            card.classList.remove('filter-in');
+            void card.offsetWidth;  // reflow
+            if (!reduced) card.classList.add('filter-in');
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        // remove the filter-in helper after animation
+        if (!reduced) {
+          setTimeout(() => {
+            cards.forEach(c => c.classList.remove('filter-in'));
+          }, 700);
+        }
+      }, delay);
+
+      animateCount(lastCount, visible);
+      lastCount = visible;
+      noResults.classList.toggle('show', visible === 0);
+    });
+  });
+</script>
+
+
+<script>
+
+  // ============================================
+  // MOTION LAYER — runtime
+  // ============================================
+  (function(){
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // 1. Mark loaded → hero stagger triggers
+    requestAnimationFrame(() => {
+      document.body.classList.add('loaded');
+    });
+
+    // 2. Sticky nav scroll behavior + scroll progress bar
+    const nav = document.querySelector('nav');
+    const progressBar = document.querySelector('.scroll-progress > span');
+    let ticking = false;
+    function onScroll(){
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (nav) nav.classList.toggle('scrolled', y > 12);
+        if (progressBar) {
+          const max = document.documentElement.scrollHeight - window.innerHeight;
+          const pct = max > 0 ? (y / max) : 0;
+          progressBar.style.transform = `scaleX(${pct})`;
+        }
+        ticking = false;
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // 3. Reveal-on-scroll (single observer, threshold 0.12)
+    if (!reduced && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal, .clip-reveal').forEach(el => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal, .clip-reveal').forEach(el => el.classList.add('in'));
+    }
+
+    // 4. Stat counters — count up from 0 when stats section enters view
+    const statEls = document.querySelectorAll('[data-count]');
+    if (statEls.length && !reduced && 'IntersectionObserver' in window) {
+      const co = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          const el = e.target;
+          const target = parseFloat(el.dataset.count);
+          const suffix = el.dataset.suffix || '';
+          const prefix = el.dataset.prefix || '';
+          const decimals = el.dataset.decimals ? parseInt(el.dataset.decimals) : 0;
+          const dur = 1600;
+          const start = performance.now();
+          function frame(now){
+            const t = Math.min(1, (now - start) / dur);
+            // easeOutCubic
+            const eased = 1 - Math.pow(1 - t, 3);
+            const val = target * eased;
+            el.textContent = prefix + val.toFixed(decimals) + suffix;
+            if (t < 1) requestAnimationFrame(frame);
+            else el.textContent = prefix + target.toFixed(decimals) + suffix;
+          }
+          requestAnimationFrame(frame);
+          co.unobserve(el);
+        });
+      }, { threshold: 0.4 });
+      statEls.forEach(el => co.observe(el));
+    } else {
+      statEls.forEach(el => {
+        const target = parseFloat(el.dataset.count);
+        const suffix = el.dataset.suffix || '';
+        const prefix = el.dataset.prefix || '';
+        const decimals = el.dataset.decimals ? parseInt(el.dataset.decimals) : 0;
+        el.textContent = prefix + target.toFixed(decimals) + suffix;
+      });
+    }
+
+    // 5. Page transition — intercept internal links to .html on same origin
+    const curtain = document.querySelector('.page-curtain');
+    if (curtain && !reduced) {
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest('a');
+        if (!a) return;
+        const href = a.getAttribute('href');
+        if (!href) return;
+        // only intercept same-origin .html links, not anchors / external / target=_blank
+        if (a.target === '_blank') return;
+        if (href.startsWith('#')) return;
+        if (href.startsWith('http') && !href.startsWith(window.location.origin)) return;
+        if (a.hasAttribute('rel') && a.getAttribute('rel').includes('sponsored')) return;
+        if (!/\.html(\?.*)?(#.*)?$/.test(href) && href !== '/' && !href.endsWith('/')) return;
+        // is current page?
+        const dest = new URL(href, window.location.href);
+        if (dest.pathname === window.location.pathname) return;
+
+        e.preventDefault();
+        document.body.classList.add('transitioning');
+        curtain.classList.add('leaving');
+        setTimeout(() => { window.location.href = href; }, 620);
+      });
+    }
+  })();
+
+</script>
+</body>
+</html>
